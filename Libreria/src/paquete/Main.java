@@ -13,7 +13,7 @@ public class Main {
         listadoLibros[3] = new Libros("Juego de Tronos","George R.R Martin",1400F,"Fantasía","Vintage",1993);
         listadoLibros[4] = new Libros("Mr Mercedes","Stephen King",1400F,"Terror","De Bolsillo",2011);
 
-        Comics listadoComics [] = new Comics[3];
+        Comics listadoComics [] = new Comics[5];
         listadoComics[0] = new Comics("Batman: The Dark Knight Returns ","Frank Miller",1000F,"Comics","DC comics",1986 ,"Frank Miller","Varley");
         listadoComics[1] = new Comics("Watchmen","Alan Moore",1400F,"Comics","DC comics",1987,"Dave Gibbons","Higgins");
         listadoComics[2] = new Comics("V de Vendetta","Alan Moore",1200F,"Comics","DC comics",1982,"Whitaker","Doods");
@@ -23,11 +23,11 @@ public class Main {
         listadoRevista[1] = new Revistas("Revista Caras Junio 2021",600F, "2021-06-03");
         listadoRevista[2] = new Revistas("Revista Rumbos n354",400F, "2021-02-16");
 
-        System.out.println("Seleccione la opcion que desee realizar");
-        System.out.println("1 - Listados totales de productos");
-        System.out.println("2 - Busquedas parciales");
 
-        System.out.println("7- La concha de tu madre lcm");
+        System.out.println("Seleccione la opción que desee realizar");
+        System.out.println("1 - Listados totales de productos");
+        System.out.println("2 - Búsquedas parciales");
+
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Opcion: ");
@@ -38,6 +38,7 @@ public class Main {
                 System.out.println("1 - Listado total de libros");
                 System.out.println("2 - Listado total de comics");
                 System.out.println("3 - Listado total de revistas");
+                System.out.println("4 - Volver atrás");
                 Scanner scannerTotal = new Scanner(System.in);
                 System.out.print("Opcion: ");
                 int listados = scannerTotal.nextInt();
@@ -72,6 +73,10 @@ public class Main {
                             }
                         }
                         break;
+                    case 4:
+                       main(null);
+                        break;
+
                     default:
                         System.out.println("No ha elegido una opcion disponible");
 
@@ -112,6 +117,34 @@ public class Main {
                             System.out.println("No se ha encontrado ningun libro con ese autor");
                         }
                         break;
+                    case 2:
+                    case 1:
+                        Scanner scannerGenero = new Scanner(System.in);
+                        System.out.print("Escribe el nombre del autor: ");
+                        String nombreGenero = scannerGenero.nextLine().toUpperCase();
+
+                         contador = 0;
+                        for(Libros listadoGeneros: listadoLibros){
+                            if(listadoGeneros != null) {
+                                if(listadoGeneros.getGenero().toUpperCase().equals(nombreGenero)){
+                                    System.out.println(listadoGeneros.toString());
+                                    contador++;
+                                }
+                            }
+                        }
+                        for(Comics listadoGenerosC: listadoComics){
+                            if(listadoGenerosC !=null){
+                                if(listadoGenerosC.getGenero().toUpperCase().equals(nombreGenero)){
+                                    System.out.println(listadoGenerosC.toString());
+                                    contador++;
+                                }
+                            }
+                        }
+                        if(contador==0){
+                            System.out.println("No se ha encontrado ningun libro con ese autor");
+                        }
+                        break;
+
                 }
                 break;
             default:

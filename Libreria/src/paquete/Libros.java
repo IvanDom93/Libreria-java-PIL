@@ -19,7 +19,11 @@ public class Libros extends Productos {
     }
 
     public String getAutorNombre() {
-        return autorNombre;
+        return this.autorNombre;
+    }
+
+    public  String getGenero(){
+        return this.genero;
     }
 
     @Override
