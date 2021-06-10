@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Libros listadoLibros [] = new Libros[10];
+        Libros listadoLibros [] = new Libros[7];
         listadoLibros[0] = new Libros("It","Stephen King",1200F,"Terror","Editorial Horror",1971);
         listadoLibros[1] = new Libros("1984","George Orwell",1100F,"Novela","Libros Clasicos",1949);
         listadoLibros[2] = new Libros("El señor de los Anillos","J.R.R Tolkien",1400F,"Fantasia","De Bolsillo",1966);
@@ -209,27 +209,33 @@ public class Main {
 
                 switch (agregar){
                     case 1:
-                        System.out.print(" Ingresa el título del libro: ");
-                        String nuevoTitulo = nuevoProducto.nextLine();
-                        nuevoTitulo = nuevoProducto.nextLine();
-                        System.out.print(" Ingresa el nombre del autor: ");
-                        String nuevoAutor = nuevoProducto.nextLine();
-                        System.out.print(" Ingresa el precio del libro: ");
-                        float nuevoPrecio = nuevoProducto.nextFloat();
-                        System.out.print(" Ingresa el genero del libro: ");
-                        String nuevoGenero = nuevoProducto.nextLine();
-                        nuevoGenero = nuevoProducto.nextLine();
-                        System.out.print(" Ingresa la editorial del libro: ");
-                        String nuevoEditorial = nuevoProducto.nextLine();
-                        System.out.print(" Ingresa el año de la publicación: ");
-                        int nuevoAño = nuevoProducto.nextInt();
                         int contadorArray = 0;
                         for(Libros listadol: listadoLibros){
                             if (listadol != null){
                                 contadorArray++;
                             }
                         }
-                        listadoLibros[contadorArray] = new Libros(nuevoTitulo,nuevoAutor,nuevoPrecio,nuevoGenero,nuevoEditorial,nuevoAño);
+                        if(contadorArray < listadoLibros.length){
+                          System.out.print(" Ingresa el título del libro: ");
+                          String nuevoTitulo = nuevoProducto.nextLine();
+                          nuevoTitulo = nuevoProducto.nextLine();
+                          System.out.print(" Ingresa el nombre del autor: ");
+                          String nuevoAutor = nuevoProducto.nextLine();
+                          System.out.print(" Ingresa el precio del libro: ");
+                          float nuevoPrecio = nuevoProducto.nextFloat();
+                          System.out.print(" Ingresa el genero del libro: ");
+                          String nuevoGenero = nuevoProducto.nextLine();
+                          nuevoGenero = nuevoProducto.nextLine();
+                          System.out.print(" Ingresa la editorial del libro: ");
+                          String nuevoEditorial = nuevoProducto.nextLine();
+                          System.out.print(" Ingresa el año de la publicación: ");
+                          int nuevoAño = nuevoProducto.nextInt();
+
+                          listadoLibros[contadorArray] = new Libros(nuevoTitulo,nuevoAutor,nuevoPrecio,nuevoGenero,nuevoEditorial,nuevoAño);
+                            System.out.println("Elemento agregado correctamente");
+                        } else{
+                            System.out.println("El array está lleno. No se pueden agregar más elementos");
+                        }
                         break;
                     case 4:
                         respuesta = datos.Inicializar();
