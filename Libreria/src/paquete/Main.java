@@ -168,13 +168,73 @@ public class Main {
                         }
                         break;
                     case 4:
-                        //Hacer aca...
+                        Scanner scannerTitulo = new Scanner(System.in);
+                        System.out.print("Escribe el título del libro que desea buscar : ");
+                        String titulos = scannerTitulo.nextLine().toUpperCase();
+                        contador = 0;
+                        for(Libros listadoTitulos: listadoLibros){
+                            if(listadoTitulos != null) {
+                                if(listadoTitulos.getTitulo().toUpperCase().equals(titulos)){
+                                    System.out.println(listadoTitulos.toString());
+                                    contador++;
+                                }
+                            }
+                        }
+                        for(Libros listadoTitulosComics: listadoComics){
+                            if(listadoTitulosComics != null) {
+                                if(listadoTitulosComics.getTitulo().toUpperCase().equals(titulos)){
+                                    System.out.println(listadoTitulosComics.toString());
+                                    contador++;
+                                }
+                            }
+                        }
+                        if(contador==0){
+                            System.out.println("No se ha encontrado ningun libro con ese titulo");
+                        }
+                        break;
                     case 5:
                         respuesta = datos.Inicializar();
                         break;
                 }
                 break;
             case 3:
+                System.out.println(" 1- Ingresa un nuevo libro");
+                System.out.println(" 2 - Ingresa una nueva revista");
+                System.out.println(" 3- Ingresa un nuevo cómic");
+                System.out.println(" 4- Volver atrás");
+
+                Scanner nuevoProducto = new Scanner(System.in);
+                System.out.print("Respuesta: ");
+                int agregar = nuevoProducto.nextInt();
+
+                switch (agregar){
+                    case 1:
+                        System.out.print(" Ingresa el título del libro: ");
+                        String nuevoTitulo = nuevoProducto.nextLine();
+                        nuevoTitulo = nuevoProducto.nextLine();
+                        System.out.print(" Ingresa el nombre del autor: ");
+                        String nuevoAutor = nuevoProducto.nextLine();
+                        System.out.print(" Ingresa el precio del libro: ");
+                        float nuevoPrecio = nuevoProducto.nextFloat();
+                        System.out.print(" Ingresa el genero del libro: ");
+                        String nuevoGenero = nuevoProducto.nextLine();
+                        nuevoGenero = nuevoProducto.nextLine();
+                        System.out.print(" Ingresa la editorial del libro: ");
+                        String nuevoEditorial = nuevoProducto.nextLine();
+                        System.out.print(" Ingresa el año de la publicación: ");
+                        int nuevoAño = nuevoProducto.nextInt();
+                        int contadorArray = 0;
+                        for(Libros listadol: listadoLibros){
+                            if (listadol != null){
+                                contadorArray++;
+                            }
+                        }
+                        listadoLibros[contadorArray] = new Libros(nuevoTitulo,nuevoAutor,nuevoPrecio,nuevoGenero,nuevoEditorial,nuevoAño);
+                        break;
+                    case 4:
+                        respuesta = datos.Inicializar();
+                }
+
                 break;
             case 4:
                 System.out.println("¿Seguro que desea salir? Escriba SI - NO");
