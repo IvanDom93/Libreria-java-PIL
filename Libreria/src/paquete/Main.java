@@ -30,6 +30,7 @@ public class Main {
         System.out.println("4 - Busqueda por autores");
         System.out.println("5- Busqueda por generos");
         System.out.println("6- Busqueda por rango de precios");
+        System.out.println("7- La concha de tu madre");
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Opcion: ");
