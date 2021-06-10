@@ -21,6 +21,8 @@ public class Comics extends Libros {
 
 
 
+
+
     @Override
     public String toString() {
         return "Listado de Comics: " +
