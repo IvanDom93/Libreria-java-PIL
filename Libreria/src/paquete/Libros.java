@@ -26,6 +26,8 @@ public class Libros extends Productos {
         return this.genero;
     }
 
+
+
     @Override
     public String toString() {
         return "Listado de libros: " +
