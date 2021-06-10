@@ -23,17 +23,11 @@ public class Main {
         listadoRevista[1] = new Revistas("Revista Caras Junio 2021",600F, "2021-06-03");
         listadoRevista[2] = new Revistas("Revista Rumbos n354",400F, "2021-02-16");
 
+        MenuPrincipal datos = new MenuPrincipal();
 
-        System.out.println("Seleccione la opción que desee realizar");
-        System.out.println("1 - Listados totales de productos");
-        System.out.println("2 - Búsquedas parciales");
-        System.out.println("3 - Insertar nuevos elementos");
-        System.out.println("4 - Salir del programa");
-
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Opcion: ");
-        int respuesta = scanner.nextInt();
+        int respuesta = datos.Inicializar();
+// while para que se ejecute el menu nuevamente hasta que se decida salir, como nunca va a ser 5 se repite siempre
+     while(respuesta != 5) {
 
         switch (respuesta){
             case 1:
@@ -77,7 +71,7 @@ public class Main {
                         break;
                     case 4:
                         //vuelve al metodo main
-                       main(null);
+                       respuesta = datos.Inicializar();
                         break;
 
                     default:
@@ -89,7 +83,7 @@ public class Main {
                 System.out.println("1 - Búsqueda por autores");
                 System.out.println("2 - Búsqueda por géneros");
                 System.out.println("3 - Búsqueda del precio del libro");
-                System.out.println("4 - Búsqueda de stock del libro ");
+                System.out.println("4 - Búsqueda por titulo");
                 System.out.println("5 - Volver atrás");
                 Scanner scannerBusqeda = new Scanner(System.in);
                 System.out.print("Opcion: ");
@@ -176,13 +170,29 @@ public class Main {
                     case 4:
                         //Hacer aca...
                     case 5:
-                        main(null);
+                        respuesta = datos.Inicializar();
                         break;
+                }
+                break;
+            case 3:
+                break;
+            case 4:
+                System.out.println("¿Seguro que desea salir? Escriba SI - NO");
+                Scanner salida = new Scanner(System.in);
+                System.out.print("Respuesta: ");
+                String respuestaSalida = salida.nextLine().toUpperCase();
+
+                if(respuestaSalida.equals("SI"))
+                    System.exit(0);
+                else{
+                    respuesta = datos.Inicializar();
                 }
                 break;
             default:
                 System.out.println("No ha elegido una opcion disponible");
 
+
         }
+     }
     }
 }
