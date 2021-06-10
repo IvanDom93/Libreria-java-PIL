@@ -27,6 +27,8 @@ public class Main {
         System.out.println("Seleccione la opción que desee realizar");
         System.out.println("1 - Listados totales de productos");
         System.out.println("2 - Búsquedas parciales");
+        System.out.println("3 - Insertar nuevos elementos");
+        System.out.println("4 - Salir del programa");
 
 
         Scanner scanner = new Scanner(System.in);
@@ -87,7 +89,8 @@ public class Main {
                 System.out.println("1 - Búsqueda por autores");
                 System.out.println("2 - Búsqueda por géneros");
                 System.out.println("3 - Búsqueda del precio del libro");
-                System.out.println("4 - Volver atrás");
+                System.out.println("4 - Búsqueda de stock del libro ");
+                System.out.println("5 - Volver atrás");
                 Scanner scannerBusqeda = new Scanner(System.in);
                 System.out.print("Opcion: ");
                 int busquedas = scannerBusqeda.nextInt();
@@ -171,6 +174,8 @@ public class Main {
                         }
                         break;
                     case 4:
+                        //Hacer aca...
+                    case 5:
                         main(null);
                         break;
                 }
