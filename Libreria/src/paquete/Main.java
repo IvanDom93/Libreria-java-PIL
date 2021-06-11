@@ -51,7 +51,6 @@ public class Main {
                         break;
                     case 2:
                         for(Comics todoComics:listadoComics){
-                            //for each recorre todos los miembros del array, el if es para que no recorra los arrays vacios y no salte el .NullPointerException
                             if(todoComics == null) {
                                 break;
                             }else {
@@ -61,7 +60,6 @@ public class Main {
                         break;
                     case 3:
                         for(Revistas todoRevistas:listadoRevista){
-                            //for each recorre todos los miembros del array, el if es para que no recorra los arrays vacios y no salte el .NullPointerException
                             if(todoRevistas == null) {
                                 break;
                             }else {
@@ -76,8 +74,8 @@ public class Main {
 
                     default:
                         System.out.println("No ha elegido una opcion disponible");
-
                 }
+                System.out.println(" ");
                 break;
             case 2:
                 System.out.println("1 - Búsqueda por autores");
@@ -115,6 +113,7 @@ public class Main {
                         if(contador==0){
                             System.out.println("No se ha encontrado ningun libro con ese autor");
                         }
+                        System.out.println(" ");
                         break;
                     case 2:
                         Scanner scannerGenero = new Scanner(System.in);
@@ -141,6 +140,7 @@ public class Main {
                         if(contador==0){
                             System.out.println("No se ha encontrado ningun libro con ese genero");
                         }
+                        System.out.println(" ");
                         break;
                     case 3:
                         Scanner scannerPrecio = new Scanner(System.in);
@@ -166,6 +166,7 @@ public class Main {
                         if(contador==0){
                             System.out.println("No se ha encontrado ningun libro con ese titulo");
                         }
+                        System.out.println(" ");
                         break;
                     case 4:
                         Scanner scannerTitulo = new Scanner(System.in);
@@ -191,6 +192,7 @@ public class Main {
                         if(contador==0){
                             System.out.println("No se ha encontrado ningun libro con ese titulo");
                         }
+                        System.out.println(" ");
                         break;
                     case 5:
                         respuesta = datos.Inicializar();
@@ -210,6 +212,8 @@ public class Main {
                 switch (agregar){
                     case 1:
                         int contadorArray = 0;
+                        // el for each cuenta los elementos no nulos del array, despues se lo compara con el length
+                        // del array para comprobar que no este lleno y se pueden agregar mas elementos
                         for(Libros listadol: listadoLibros){
                             if (listadol != null){
                                 contadorArray++;
@@ -236,19 +240,80 @@ public class Main {
                         } else{
                             System.out.println("El array está lleno. No se pueden agregar más elementos");
                         }
+                        System.out.println(" ");
                         break;
+                    case 2:
+                         contadorArray = 0;
+                        for(Revistas listadoR: listadoRevista){
+                            if (listadoR != null){
+                                contadorArray++;
+                            }
+                        }
+                        if(contadorArray < listadoRevista.length){
+                            System.out.print(" Ingresa el nombre de la revista: ");
+                            String nuevoNombre = nuevoProducto.nextLine();
+                            nuevoNombre = nuevoProducto.nextLine();
+                            System.out.print(" Ingresa el precio de la revista: ");
+                            float nuevoPrecioR = nuevoProducto.nextFloat();
+                            System.out.print(" Ingresa la fecha de publicación(yyyy-mm-dd): ");
+                            String nuevaFecha = nuevoProducto.nextLine();
+                            nuevaFecha = nuevoProducto.nextLine();
+
+                            listadoRevista[contadorArray] = new Revistas(nuevoNombre,nuevoPrecioR,nuevaFecha);
+                            System.out.println("Elemento agregado correctamente");
+                        } else{
+                            System.out.println("El array está lleno. No se pueden agregar más elementos");
+                        }
+                        System.out.println(" ");
+                        break;
+                    case 3:
+                        contadorArray = 0;
+                        for(Comics listadoC: listadoComics){
+                            if (listadoC != null){
+                                contadorArray++;
+                            }
+                        }
+                        if(contadorArray < listadoComics.length){
+                            System.out.print(" Ingresa el título del cómic: ");
+                            String nuevoTitulo = nuevoProducto.nextLine();
+                            nuevoTitulo = nuevoProducto.nextLine();
+                            System.out.print(" Ingresa el nombre del escritor: ");
+                            String nuevoAutor = nuevoProducto.nextLine();
+                            System.out.print(" Ingresa el precio del cómic: ");
+                            float nuevoPrecio = nuevoProducto.nextFloat();
+                            System.out.print(" Ingresa el genero del cómic: ");
+                            String nuevoGenero = nuevoProducto.nextLine();
+                            nuevoGenero = nuevoProducto.nextLine();
+                            System.out.print(" Ingresa la editorial del cómic: ");
+                            String nuevoEditorial = nuevoProducto.nextLine();
+                            System.out.print(" Ingresa el año de la publicación: ");
+                            int nuevoAño = nuevoProducto.nextInt();
+                            String nuevoDibujante = nuevoProducto.nextLine();
+                            System.out.print(" Ingresa el nombre del dibujante: ");
+                            String nuevoColorista= nuevoProducto.nextLine();
+                            System.out.print(" Ingresa el nombre del colorista: ");
+                            nuevoColorista= nuevoProducto.nextLine();
+
+                            listadoComics[contadorArray] = new Comics(nuevoTitulo,nuevoAutor,nuevoPrecio,nuevoGenero,nuevoEditorial,nuevoAño,nuevoDibujante,nuevoColorista);
+                            System.out.println("Elemento agregado correctamente");
+                        } else{
+                            System.out.println("El array está lleno. No se pueden agregar más elementos");
+                        }
+                        System.out.println(" ");
+                        break;
+
                     case 4:
                         respuesta = datos.Inicializar();
                 }
 
                 break;
             case 4:
-                System.out.println("¿Seguro que desea salir? Escriba SI - NO");
+                System.out.println("¿Seguro que desea salir? 1) SI - 2) NO");
                 Scanner salida = new Scanner(System.in);
                 System.out.print("Respuesta: ");
-                String respuestaSalida = salida.nextLine().toUpperCase();
+                int respuestaSalida = salida.nextInt();
 
-                if(respuestaSalida.equals("SI"))
+                if(respuestaSalida == 1)
                     System.exit(0);
                 else{
                     respuesta = datos.Inicializar();
