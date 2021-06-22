@@ -1,4 +1,4 @@
-package paquete;
+package productos;
 
 import java.util.Scanner;
 
@@ -7,10 +7,10 @@ public class MenuPrincipal {
     public MenuPrincipal() {
     }
 
-    public int Inicializar(){
+    public int Inicializar() {
         int valor = 0;
 
-        do{
+        do {
             System.out.println("Seleccione la opción que desee realizar");
             System.out.println("1 - Listados totales de productos");
             System.out.println("2 - Búsquedas parciales");
@@ -22,7 +22,7 @@ public class MenuPrincipal {
             System.out.print("Opcion: ");
             valor = scanner.nextInt();
 
-        }while (valor < 1 || valor > 4);
+        } while (valor < 1 || valor > 4);
 
         return valor;
     }
