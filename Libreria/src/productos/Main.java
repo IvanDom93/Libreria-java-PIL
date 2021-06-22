@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Libro listadoLibros[] = new Libro[8];
+        Libro listadoLibros[] = new Libro[7];
         listadoLibros[0] = new Libro("It", "Stephen King", 1200F, "Terror", "Editorial Horror", 1971);
         listadoLibros[1] = new Libro("1984", "George Orwell", 1100F, "Novela", "Libros Clasicos", 1949);
         listadoLibros[2] = new Libro("El señor de los Anillos", "J.R.R Tolkien", 1400F, "Fantasia", "De Bolsillo", 1966);
