@@ -12,7 +12,7 @@ public class Main {
         listadoLibros[2] = new Libro("El señor de los Anillos", "J.R.R Tolkien", 1400F, "Fantasia", "De Bolsillo", 1966);
         listadoLibros[3] = new Libro("Juego de Tronos", "George R.R Martin", 1400F, "Fantasia", "Vintage", 1993);
         listadoLibros[4] = new Libro("Mr Mercedes", "Stephen King", 1400F, "Terror", "De Bolsillo", 2011);
-        listadoLibros[5] = new Libro("el tunel", "Ernesto Sabato", 1400F, "Novela", "De Bolsillo", 1948);
+        listadoLibros[5] = new Libro("El Tunel", "Ernesto Sabato", 1400F, "Novela", "De Bolsillo", 1948);
 
         Comic listadoComics[] = new Comic[5];
         listadoComics[0] = new Comic("Batman: The Dark Knight Returns ", "Frank Miller", 1000F, "Comics", "DC comics", 1986, "Frank Miller", "Varley");
