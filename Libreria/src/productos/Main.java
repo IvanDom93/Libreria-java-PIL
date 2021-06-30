@@ -1,30 +1,37 @@
 package productos;
 
+
 import java.util.Scanner;
+import baseDeDatos.*;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
+        //CrearTabla.crearBaseDatos();
+        //InsertarElemento.insertarDatos();
+
         Libro listadoLibros[] = new Libro[7];
-        listadoLibros[0] = new Libro("It", "Stephen King", 1200F, "Terror", "Editorial Horror", 1971);
+        /*listadoLibros[0] = new Libro("It", "Stephen King", 1200F, "Terror", "Editorial Horror", 1971);
         listadoLibros[1] = new Libro("1984", "George Orwell", 1100F, "Novela", "Libros Clasicos", 1949);
         listadoLibros[2] = new Libro("El señor de los Anillos", "J.R.R Tolkien", 1400F, "Fantasia", "De Bolsillo", 1966);
         listadoLibros[3] = new Libro("Juego de Tronos", "George R.R Martin", 1400F, "Fantasia", "Vintage", 1993);
         listadoLibros[4] = new Libro("Mr Mercedes", "Stephen King", 1400F, "Terror", "De Bolsillo", 2011);
-        listadoLibros[5] = new Libro("El Tunel", "Ernesto Sabato", 1400F, "Novela", "De Bolsillo", 1948);
+        listadoLibros[5] = new Libro("El Tunel", "Ernesto Sabato", 1400F, "Novela", "De Bolsillo", 1948);*/
 
         Comic listadoComics[] = new Comic[5];
-        listadoComics[0] = new Comic("Batman: The Dark Knight Returns ", "Frank Miller", 1000F, "Comics", "DC comics", 1986, "Frank Miller", "Varley");
+        /*listadoComics[0] = new Comic("Batman: The Dark Knight Returns ", "Frank Miller", 1000F, "Comics", "DC comics", 1986, "Frank Miller", "Varley");
         listadoComics[1] = new Comic("Watchmen", "Alan Moore", 1400F, "Comics", "DC comics", 1987, "Dave Gibbons", "Higgins");
-        listadoComics[2] = new Comic("V de Vendetta", "Alan Moore", 1200F, "Comics", "DC comics", 1982, "Whitaker", "Doods");
+        listadoComics[2] = new Comic("V de Vendetta", "Alan Moore", 1200F, "Comics", "DC comics", 1982, "Whitaker", "Doods");*/
 
         Revista listadoRevista[] = new Revista[5];
-        listadoRevista[0] = new Revista("Muy Interesante n830", 800F, "2021-01-29");
+       /* listadoRevista[0] = new Revista("Muy Interesante n830", 800F, "2021-01-29");
         listadoRevista[1] = new Revista("Revista Caras Junio 2021", 600F, "2021-06-03");
-        listadoRevista[2] = new Revista("Revista Rumbos n354", 400F, "2021-02-16");
+        listadoRevista[2] = new Revista("Revista Rumbos n354", 400F, "2021-02-16");*/
 
         MenuPrincipal datos = new MenuPrincipal();
+        LeerElemento leerElemento = new LeerElemento();
 
         int respuesta = datos.Inicializar();
 // while para que se ejecute el menu nuevamente hasta que se decida salir, como nunca va a ser 5 se repite siempre
@@ -41,32 +48,37 @@ public class Main {
                     int listados = scannerTotal.nextInt();
                     switch (listados) {
                         case 1:
-                            for (Libro todoLibros : listadoLibros) {
+
+                            leerElemento.listarLibros();
+
+                            /*for (Libro todoLibros : listadoLibros) {
                                 //for each recorre todos los miembros del array, el if es para que no recorra los arrays vacios y no salte el .NullPointerException
                                 if (todoLibros == null) {
                                     break;
                                 } else {
                                     System.out.println(todoLibros.toString());
                                 }
-                            }
+                            }*/
                             break;
                         case 2:
-                            for (Comic todoComics : listadoComics) {
+                            leerElemento.listarComics();
+                            /*for (Comic todoComics : listadoComics) {
                                 if (todoComics == null) {
                                     break;
                                 } else {
                                     System.out.println(todoComics.toString());
                                 }
-                            }
+                            }*/
                             break;
                         case 3:
-                            for (Revista todoRevistas : listadoRevista) {
+                            leerElemento.listarRevistas();
+                            /*for (Revista todoRevistas : listadoRevista) {
                                 if (todoRevistas == null) {
                                     break;
                                 } else {
                                     System.out.println(todoRevistas.toString());
                                 }
-                            }
+                            }*/
                             break;
                         case 4:
                             //vuelve al metodo main
