@@ -105,7 +105,10 @@ public class Main {
                             System.out.print("Escribe el nombre del autor: ");
                             String nombreAutor = scanner1.nextLine().toUpperCase();
 
+                            LeerElemento busquedaAutor = new LeerElemento();
+                            busquedaAutor.busquedaPorAutores(nombreAutor);
                             int contador = 0;
+                            /*
                             for (Libro listadoAutores : listadoLibros) {
                                 if (listadoAutores != null) {
                                     // to upper case para que compare los dos string en mayuscula siempre
@@ -125,7 +128,7 @@ public class Main {
                             }
                             if (contador == 0) {
                                 System.out.println("No se ha encontrado ningun libro con ese autor");
-                            }
+                            }*/
                             System.out.println(" ");
                             break;
                         case 2:
