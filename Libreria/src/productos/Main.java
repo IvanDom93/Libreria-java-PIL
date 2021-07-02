@@ -136,7 +136,10 @@ public class Main {
                             System.out.print("Escribe el genero que desea buscar: ");
                             String nombreGenero = scannerGenero.nextLine().toUpperCase();
 
-                            contador = 0;
+                            LeerElemento busquedageneros = new LeerElemento();
+                            busquedageneros.busquedaPorGeneros(nombreGenero);
+
+                            /*contador = 0;
                             for (Libro listadoGeneros : listadoLibros) {
                                 if (listadoGeneros != null) {
                                     if (listadoGeneros.getGenero().toUpperCase().equals(nombreGenero)) {
@@ -155,14 +158,18 @@ public class Main {
                             }
                             if (contador == 0) {
                                 System.out.println("No se ha encontrado ningun libro con ese genero");
-                            }
+                            }*/
                             System.out.println(" ");
                             break;
                         case 3:
                             Scanner scannerPrecio = new Scanner(System.in);
                             System.out.print("Escribe el libro del que deseas saber el precio: ");
                             String tituloLibro = scannerPrecio.nextLine().toUpperCase();
-                            contador = 0;
+
+                            LeerElemento buscarPrecio = new LeerElemento();
+                            buscarPrecio.busquedaDePrecio(tituloLibro);
+
+                            /*contador = 0;
                             for (Libro listadoTitulos : listadoLibros) {
                                 if (listadoTitulos != null) {
                                     if (listadoTitulos.getTitulo().toUpperCase().equals(tituloLibro)) {
@@ -182,13 +189,17 @@ public class Main {
                             if (contador == 0) {
                                 System.out.println("No se ha encontrado ningun libro con ese titulo");
                             }
-                            System.out.println(" ");
+                            System.out.println(" ");*/
                             break;
                         case 4:
                             Scanner scannerTitulo = new Scanner(System.in);
                             System.out.print("Escribe el título del libro que desea buscar : ");
                             String titulos = scannerTitulo.nextLine().toUpperCase();
-                            contador = 0;
+
+                            LeerElemento busquedaTitulos = new LeerElemento();
+                            busquedaTitulos.busquedaPorTitulo(titulos);
+
+                           /* contador = 0;
                             for (Libro listadoTitulos : listadoLibros) {
                                 if (listadoTitulos != null) {
                                     if (listadoTitulos.getTitulo().toUpperCase().equals(titulos)) {
@@ -208,7 +219,7 @@ public class Main {
                             if (contador == 0) {
                                 System.out.println("No se ha encontrado ningun libro con ese titulo");
                             }
-                            System.out.println(" ");
+                            System.out.println(" ");*/
                             break;
                         case 5:
                             respuesta = datos.Inicializar();
