@@ -159,14 +159,14 @@ public class InsertarElemento {
         return 0;
     }
 
-    public void insertarNuevoLibro(String nuevoTitulo, String nuevoAutor, float nuevoPrecio, String nuevoGenero, String nuevoEditorial, int nuevoAño) {
+    public void insertarNuevoLibro(String nuevoTitulo, String nuevoAutor, float nuevoPrecio, String nuevoGenero, String nuevoEditorial, int nuevoAnio) {
         Connection conn = null;
         Statement stmt = null;
         try {
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
-            String sql = "INSERT INTO LIBRO " + "VALUES" + "(" + busquedaDeId(1) + ",'" + nuevoTitulo + "','" + nuevoAutor + "'," + nuevoPrecio + ",'" + nuevoGenero + "','" + nuevoEditorial + "'," + nuevoAño + ");";
+            String sql = "INSERT INTO LIBRO " + "VALUES" + "(" + busquedaDeId(1) + ",'" + nuevoTitulo + "','" + nuevoAutor + "'," + nuevoPrecio + ",'" + nuevoGenero + "','" + nuevoEditorial + "'," + nuevoAnio + ");";
             stmt.executeUpdate(sql);
             System.out.println("El producto se agregó correctamente");
             stmt.close();
@@ -188,14 +188,14 @@ public class InsertarElemento {
         }
     }
 
-    public void insertarNuevoComic(String nuevoTitulo, String nuevoAutor, float nuevoPrecio, String nuevoGenero, String nuevoEditorial, int nuevoAño, String nuevoDibujante, String nuevoColorista) {
+    public void insertarNuevoComic(String nuevoTitulo, String nuevoAutor, float nuevoPrecio, String nuevoGenero, String nuevoEditorial, int nuevoAnio, String nuevoDibujante, String nuevoColorista) {
         Connection conn = null;
         Statement stmt = null;
         try {
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
-            String sql = "INSERT INTO COMIC " + "VALUES" + "(" + busquedaDeId(2) + ",'" + nuevoTitulo + "','" + nuevoAutor + "'," + nuevoPrecio + ",'" + nuevoGenero + "','" + nuevoEditorial + "'," + nuevoAño + ",'" + nuevoDibujante + "','" + nuevoColorista + "');";
+            String sql = "INSERT INTO COMIC " + "VALUES" + "(" + busquedaDeId(2) + ",'" + nuevoTitulo + "','" + nuevoAutor + "'," + nuevoPrecio + ",'" + nuevoGenero + "','" + nuevoEditorial + "'," + nuevoAnio + ",'" + nuevoDibujante + "','" + nuevoColorista + "');";
             stmt.executeUpdate(sql);
             System.out.println("El producto se agregó correctamente");
             stmt.close();

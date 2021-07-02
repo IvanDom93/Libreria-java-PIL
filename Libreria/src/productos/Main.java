@@ -128,9 +128,9 @@ public class Main {
                             System.out.print(" Ingresa la editorial del libro: ");
                             String nuevoEditorial = nuevoProducto.nextLine();
                             System.out.print(" Ingresa el año de la publicación: ");
-                            int nuevoAño = nuevoProducto.nextInt();
+                            int nuevoAnio = nuevoProducto.nextInt();
 
-                            insertarLibro.insertarNuevoLibro(nuevoTitulo, nuevoAutor, nuevoPrecio, nuevoGenero, nuevoEditorial, nuevoAño);
+                            insertarLibro.insertarNuevoLibro(nuevoTitulo, nuevoAutor, nuevoPrecio, nuevoGenero, nuevoEditorial, nuevoAnio);
 
                             System.out.println(" ");
                             break;
@@ -167,14 +167,14 @@ public class Main {
                             System.out.print(" Ingresa la editorial del cómic: ");
                             String nuevoEditorialC = nuevoProducto.nextLine();
                             System.out.print(" Ingresa el año de la publicación: ");
-                            int nuevoAñoC = nuevoProducto.nextInt();
+                            int nuevoAnioC = nuevoProducto.nextInt();
                             String nuevoDibujante = nuevoProducto.nextLine();
                             System.out.print(" Ingresa el nombre del dibujante: ");
                             String nuevoColorista = nuevoProducto.nextLine();
                             System.out.print(" Ingresa el nombre del colorista: ");
                             nuevoColorista = nuevoProducto.nextLine();
 
-                            insertarComic.insertarNuevoComic(nuevoTituloC, nuevoAutorC, nuevoPrecioC, nuevoGeneroC, nuevoEditorialC, nuevoAñoC, nuevoDibujante, nuevoColorista);
+                            insertarComic.insertarNuevoComic(nuevoTituloC, nuevoAutorC, nuevoPrecioC, nuevoGeneroC, nuevoEditorialC, nuevoAnioC, nuevoDibujante, nuevoColorista);
 
                             System.out.println(" ");
                             break;
