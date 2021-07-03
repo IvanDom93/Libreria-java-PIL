@@ -11,4 +11,8 @@ public abstract class Producto {
     public float getPrecio() {
         return precio;
     }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
 }

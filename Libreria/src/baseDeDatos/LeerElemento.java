@@ -1,5 +1,8 @@
 package baseDeDatos;
 
+import productos.Comic;
+import productos.Libro;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -384,6 +387,15 @@ public class LeerElemento {
                 contador++;
             }
 
+            sql = "SELECT titulo,precio FROM Revista WHERE UPPER(titulo) LIKE " + "'" + tituloproducto + "%';";
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                float precio = rs.getFloat("precio");
+                String titulo = rs.getString("titulo");
+                System.out.println("El precio de: " + titulo + " es de " + precio);
+                contador++;
+            }
+
             if (contador == 0) {
                 System.out.println("No se encontró un producto con ese titulo");
             }
@@ -463,6 +475,22 @@ public class LeerElemento {
                 System.out.print(", Año de publicacion: " + anioPublicacion);
                 System.out.print(", Dibujante: " + dibujante);
                 System.out.println(", Colorista: " + colorista);
+                contador++;
+            }
+
+            sql = "SELECT id_revista, titulo, precio, fechaPublicacion FROM Revista WHERE UPPER(titulo) LIKE " + "'" + buscartitulo + "%';";
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+
+                int id = rs.getInt("id_revista");
+                String titulo = rs.getString("titulo");
+                float precio = rs.getFloat("precio");
+                String fecha = rs.getString("fechaPublicacion");
+
+                System.out.print("ID: " + id);
+                System.out.print(", Titulo: " + titulo);
+                System.out.print(", Precio: " + precio);
+                System.out.println(", Fecha de Publicacion: " + fecha);
                 contador++;
             }
 

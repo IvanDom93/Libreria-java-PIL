@@ -20,6 +20,8 @@ public class Comic extends Libro {
     }
 
 
+
+
     @Override
     public String toString() {
         return "Listado de Comics: " +

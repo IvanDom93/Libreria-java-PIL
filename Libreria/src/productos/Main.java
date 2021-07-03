@@ -53,7 +53,7 @@ public class Main {
                 case 2:
                     System.out.println("1 - Búsqueda por autores");
                     System.out.println("2 - Búsqueda por géneros");
-                    System.out.println("3 - Búsqueda del precio del libro");
+                    System.out.println("3 - Búsqueda de precio de producto");
                     System.out.println("4 - Búsqueda por titulo");
                     System.out.println("5 - Volver atrás");
                     Scanner scannerBusqeda = new Scanner(System.in);
@@ -80,7 +80,7 @@ public class Main {
                             break;
                         case 3:
                             Scanner scannerPrecio = new Scanner(System.in);
-                            System.out.print("Escribe el libro del que deseas saber el precio: ");
+                            System.out.print("Escribe el producto del que deseas saber el precio: ");
                             String tituloLibro = scannerPrecio.nextLine().toUpperCase();
 
                             LeerElemento buscarPrecio = new LeerElemento();
@@ -89,7 +89,7 @@ public class Main {
                             break;
                         case 4:
                             Scanner scannerTitulo = new Scanner(System.in);
-                            System.out.print("Escribe el título del libro que desea buscar : ");
+                            System.out.print("Escribe el título del producto que desea buscar : ");
                             String titulos = scannerTitulo.nextLine().toUpperCase();
 
                             LeerElemento busquedaTitulos = new LeerElemento();
