@@ -1,7 +1,5 @@
 package baseDeDatos;
 
-import com.sun.org.apache.bcel.internal.generic.SWITCH;
-import productos.Libro;
 
 import java.sql.*;
 

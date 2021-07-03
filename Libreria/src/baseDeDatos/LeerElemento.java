@@ -380,7 +380,7 @@ public class LeerElemento {
             rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 float precio = rs.getFloat("precio");
-                System.out.println("El precio de: " + tituloproducto + " es de" + precio);
+                System.out.println("El precio de: " + tituloproducto + " es de " + precio);
                 contador++;
             }
 
@@ -489,7 +489,118 @@ public class LeerElemento {
                 se.printStackTrace();
             }
         }
+
+
     }
 
 
+    public int busquedaPorID(int buscarID, int tabla) {
+        Connection conn = null;
+        Statement stmt = null;
+        int contador = 0;
+
+        try {
+            Class.forName(JDBC_DRIVER);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement();
+
+            String sql;
+            ResultSet rs;
+
+            switch (tabla) {
+                case 1:
+                     sql = "SELECT id_libro, titulo, autor, precio, genero, editorial, anioPublicacion FROM Libro WHERE id_libro = " + buscarID;
+                     rs = stmt.executeQuery(sql);
+                    while (rs.next()) {
+                        int id = rs.getInt("id_libro");
+                        String titulo = rs.getString("titulo");
+                        String autor = rs.getString("autor");
+                        float precio = rs.getFloat("precio");
+                        String genero = rs.getString("genero");
+                        String editorial = rs.getString("editorial");
+                        int anioPublicacion = rs.getInt("anioPublicacion");
+
+                        System.out.print("ID: " + id);
+                        System.out.print(", Titulo: " + titulo);
+                        System.out.print(", Autor: " + autor);
+                        System.out.print(", Precio: " + precio);
+                        System.out.print(", Genero: " + genero);
+                        System.out.print(", Editorial: " + editorial);
+                        System.out.println(", Año de publicacion: " + anioPublicacion);
+                        contador++;
+                    }
+                    rs.close();
+                    return contador;
+
+                case 2:
+                    sql = "SELECT id_comic, titulo, autor, precio, genero, editorial, anioPublicacion,dibujante,colorista FROM Comic WHERE id_comic = " + buscarID;
+                    rs = stmt.executeQuery(sql);
+                    while (rs.next()) {
+                        int id = rs.getInt("id_comic");
+                        String titulo = rs.getString("titulo");
+                        String autor = rs.getString("autor");
+                        float precio = rs.getFloat("precio");
+                        String genero = rs.getString("genero");
+                        String editorial = rs.getString("editorial");
+                        int anioPublicacion = rs.getInt("anioPublicacion");
+                        String dibujante = rs.getString("dibujante");
+                        String colorista = rs.getString("colorista");
+
+                        System.out.print("ID: " + id);
+                        System.out.print(", Titulo: " + titulo);
+                        System.out.print(", Autor: " + autor);
+                        System.out.print(", Precio: " + precio);
+                        System.out.print(", Genero: " + genero);
+                        System.out.print(", Editorial: " + editorial);
+                        System.out.print(", Año de publicacion: " + anioPublicacion);
+                        System.out.print(", Dibujante: " + dibujante);
+                        System.out.println(", Colorista: " + colorista);
+                        contador++;
+                    }
+                    rs.close();
+                    return contador;
+
+                case 3:
+                    sql = "SELECT id_revista, titulo, precio, fechaPublicacion FROM Revista WHERE id_revista = "+ buscarID;
+                    rs = stmt.executeQuery(sql);
+                    while (rs.next()) {
+                        int id = rs.getInt("id_revista");
+                        String titulo = rs.getString("titulo");
+                        float precio = rs.getFloat("precio");
+                        String fecha = rs.getString("fechaPublicacion");
+
+                        System.out.print("ID: " + id);
+                        System.out.print(", Titulo: " + titulo);
+                        System.out.print(", Precio: " + precio);
+                        System.out.println(", Fecha de Publicacion: " + fecha);
+                        contador++;
+                    }
+
+                    rs.close();
+                    return contador;
+
+            }
+
+        } catch (SQLException se) {
+
+            se.printStackTrace();
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        } finally {
+
+            try {
+                if (stmt != null) stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null) conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+
+        return contador;
+
+    }
 }

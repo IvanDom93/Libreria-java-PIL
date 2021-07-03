@@ -19,7 +19,7 @@ public class Main {
 
         int respuesta = datos.Inicializar();
 // while para que se ejecute el menu nuevamente hasta que se decida salir, como nunca va a ser 5 se repite siempre
-        while (respuesta != 5) {
+        while (respuesta != 6) {
 
             switch (respuesta) {
                 case 1:
@@ -185,6 +185,102 @@ public class Main {
 
                     break;
                 case 4:
+                    System.out.println(" 1 - Elimina un libro");
+                    System.out.println(" 2 - Elimina una revista");
+                    System.out.println(" 3 - Elimina un cómic");
+                    System.out.println(" 4 - Volver atrás");
+
+                    Scanner borrarProducto = new Scanner(System.in);
+                    System.out.print("Respuesta: ");
+                    int borrar = borrarProducto.nextInt();
+
+                    switch (borrar) {
+                        case 1:
+                            System.out.println(" Ingresa el codigo del libro a borrar:");
+                            Scanner codigoBorrarlibro = new Scanner(System.in);
+                            System.out.print("Respuesta: ");
+                            int id_libro = codigoBorrarlibro.nextInt();
+                            int contador_libro = leerElemento.busquedaPorID(id_libro, 1);
+                            System.out.println(" ");
+
+                            if (contador_libro != 0) {
+                                System.out.println(" ¿Seguro desea eliminar este registro?: 1-SI 2-NO");
+                                Scanner confirmar = new Scanner(System.in);
+                                System.out.print("Respuesta: ");
+                                int borrarSi = confirmar.nextInt();
+                                if (borrarSi == 1) {
+                                    BorrarElemento borrarLibro = new BorrarElemento();
+                                    borrarLibro.eliminarElemento(id_libro,1);
+                                    System.out.println(" Registro eliminado");
+                                    System.out.println(" ");
+                                }else{
+                                    break;
+                                }
+                            }else{
+                                System.out.println(" No existen productos con ese registro.");
+                            }
+
+                            break;
+                        case 2:
+                            System.out.println(" Ingresa el codigo de la revista a borrar:");
+                            Scanner codigoBorrarRevista = new Scanner(System.in);
+                            System.out.print("Respuesta: ");
+                            int id_revista = codigoBorrarRevista.nextInt();
+                            int contador_revista = leerElemento.busquedaPorID(id_revista, 3);
+                            System.out.println(" ");
+
+                            if (contador_revista != 0) {
+                                System.out.println(" ¿Seguro desea eliminar este registro?: 1-SI 2-NO");
+                                Scanner confirmarR = new Scanner(System.in);
+                                System.out.print("Respuesta: ");
+                                int borrarSiRevista = confirmarR.nextInt();
+                                if (borrarSiRevista == 1) {
+                                    BorrarElemento borrarRevista = new BorrarElemento();
+                                    borrarRevista.eliminarElemento(id_revista,2);
+                                    System.out.println(" Registro eliminado");
+                                    System.out.println(" ");
+                                }else{
+                                    break;
+                                }
+
+                            }else{
+                            System.out.println(" No existen productos con ese registro.");
+                        }
+
+                            break;
+                        case 3:
+                            System.out.println(" Ingresa el codigo del cómic a borrar:");
+                            Scanner codigoBorrarComic = new Scanner(System.in);
+                            System.out.print("Respuesta: ");
+                            int id_comic = codigoBorrarComic.nextInt();
+
+                            int codigo_comic = leerElemento.busquedaPorID(id_comic, 2);
+
+
+                            if (codigo_comic != 0) {
+                                System.out.println(" ¿Seguro desea eliminar este registro?: 1-SI 2-NO");
+                                Scanner confirmarC = new Scanner(System.in);
+                                int borrarSiComic = confirmarC.nextInt();
+                                if (borrarSiComic == 1) {
+                                    BorrarElemento borrarComic = new BorrarElemento();
+                                    borrarComic.eliminarElemento(id_comic,3);
+                                    System.out.println(" Registro eliminado");
+                                    System.out.println(" ");
+                                }else{
+                                    break;
+                                }
+
+                            }else{
+                                System.out.println(" No existen productos con ese registro.");
+                            }
+
+                            break;
+                        case 4:
+                            respuesta = datos.Inicializar();
+                    }
+
+                    break;
+                case 5:
                     System.out.println("¿Seguro que desea salir? 1) SI - 2) NO");
                     Scanner salida = new Scanner(System.in);
                     System.out.print("Respuesta: ");
