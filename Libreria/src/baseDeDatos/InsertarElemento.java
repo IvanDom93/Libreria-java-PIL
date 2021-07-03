@@ -26,9 +26,9 @@ public class InsertarElemento {
             Class.forName(JDBC_DRIVER);
 
             // STEP 2: Open a connection
-            System.out.println("Connecting to a selected database...");
+
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            System.out.println("Connected database successfully...");
+
 
             // STEP 3: Execute a query
             stmt = conn.createStatement();
@@ -70,17 +70,17 @@ public class InsertarElemento {
             sql = "INSERT INTO REVISTA " + "VALUES(3,'Revista Rumbos n354', 400, '2021-02-16')";
 
             stmt.executeUpdate(sql);
-            System.out.println("Inserted records into the table...");
+
 
             // STEP 4: Clean-up environment
             stmt.close();
             conn.close();
         } catch (SQLException se) {
             // Handle errors for JDBC
-            se.printStackTrace();
+          //  se.printStackTrace();
         } catch (Exception e) {
             // Handle errors for Class.forName
-            e.printStackTrace();
+           // e.printStackTrace();
         } finally {
             // finally block used to close resources
             try {
@@ -90,10 +90,10 @@ public class InsertarElemento {
             try {
                 if (conn != null) conn.close();
             } catch (SQLException se) {
-                se.printStackTrace();
+              //  se.printStackTrace();
             } // end finally try
         } // end try
-        System.out.println("Goodbye!");
+
     }
 
     //Busca el ultimo id de las tablas para asi sumarle 1 y poder agregar nuevos elementos

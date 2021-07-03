@@ -22,11 +22,11 @@ public class CrearTabla {
             Class.forName(JDBC_DRIVER);
 
             //STEP 2: Open a connection
-            System.out.println("Connecting to database...");
+
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
             //STEP 3: Execute a query
-            System.out.println("Creating table in given database...");
+
             stmt = conn.createStatement();
             String sql =  "CREATE TABLE LIBRO " +
                     "(id_libro INTEGER not NULL, " +
@@ -57,17 +57,17 @@ public class CrearTabla {
             stmt.executeUpdate(sql);
             stmt.executeUpdate(sql1);
             stmt.executeUpdate(sql2);
-            System.out.println("Created tables in given database...");
+
 
             // STEP 4: Clean-up environment
             stmt.close();
             conn.close();
         } catch(SQLException se) {
             //Handle errors for JDBC
-            se.printStackTrace();
+          //  se.printStackTrace();
         } catch(Exception e) {
             //Handle errors for Class.forName
-            e.printStackTrace();
+          //  e.printStackTrace();
         } finally {
             //finally block used to close resources
             try{
@@ -77,9 +77,9 @@ public class CrearTabla {
             try {
                 if(conn!=null) conn.close();
             } catch(SQLException se){
-                se.printStackTrace();
+              //  se.printStackTrace();
             } //end finally try
         } //end try
-        System.out.println("Goodbye!");
+
     }
 }
