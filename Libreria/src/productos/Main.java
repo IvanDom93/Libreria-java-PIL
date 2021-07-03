@@ -10,8 +10,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-            //CrearTabla.crearBaseDatos();
-           // InsertarElemento.insertarDatos();
+        CrearTabla.crearBaseDatos();
+        InsertarElemento.insertarDatos();
 
 
         MenuPrincipal datos = new MenuPrincipal();
