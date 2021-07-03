@@ -18,7 +18,9 @@ Al ingresar al sistema se muestra la lista de opciones disponibles:
 
 **3 - Insertar nuevos elementos**
 
-**4 - Salir del programa**
+**4 - Eliminar productos**
+
+**5 - Salir del programa**
 
 Se selecciona la opción deseada ingresando el número correspondiente en consola para visualizar los submenús.
 
@@ -86,6 +88,31 @@ Permite buscar ingresar nuevos productos (Libros, comics, revistas):
    **4 - Volver atrás**
    
    Vuelve al menú principal
+   
+ ### 4 - Eliminar productos
+
+Permite eliminar productos en base al ID de producto (Libros, comics, revistas):
+
+   **1 - Eliminar libro**
+    
+     
+   **2 - Eliminar revista**
+  
+      
+   **3 - Eliminar cómic**
+   
+     
+   **4 - Volver atrás**
+   
+  Cuando se quiera Eliminar un producto se pedirá el codigo del producto: 
+    
+   **-** Si se encuentra el codigo, se pedirá una confirmación de que se desea eliminar:
+   
+   **1 - SI :** Se elimina el registro, sale un mensaje de producto eliminado correctamente.
+ 
+   **2 - No :** Vuelve al menú anterior.
+
+   **-** Si no se encuentra el código, saldrá un mensaje notificando de que ese código no pertenece a un producto existente.
      
 ### 4 - Salir del programa
 
