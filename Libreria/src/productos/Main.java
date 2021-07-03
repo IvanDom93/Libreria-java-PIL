@@ -132,6 +132,8 @@ public class Main {
 
                             insertarLibro.insertarNuevoLibro(nuevoTitulo, nuevoAutor, nuevoPrecio, nuevoGenero, nuevoEditorial, nuevoAnio);
 
+                            Libro nuevoLibro = new Libro(nuevoTitulo,nuevoAutor,nuevoPrecio,nuevoGenero,nuevoEditorial,nuevoAnio);
+                            System.out.println(nuevoLibro);
                             System.out.println(" ");
                             break;
                         case 2:
@@ -149,6 +151,8 @@ public class Main {
 
                             insertarRevista.insertarNuevaRevista(nuevoNombre, nuevoPrecioR, nuevaFecha);
 
+                            Revista nuevaRevista = new Revista(nuevoNombre,nuevoPrecioR,nuevaFecha);
+                            System.out.println(nuevaRevista);
                             System.out.println(" ");
                             break;
                         case 3:
@@ -176,6 +180,8 @@ public class Main {
 
                             insertarComic.insertarNuevoComic(nuevoTituloC, nuevoAutorC, nuevoPrecioC, nuevoGeneroC, nuevoEditorialC, nuevoAnioC, nuevoDibujante, nuevoColorista);
 
+                            Comic nuevoComic = new Comic(nuevoTituloC, nuevoAutorC, nuevoPrecioC, nuevoGeneroC, nuevoEditorialC, nuevoAnioC, nuevoDibujante, nuevoColorista);
+                            System.out.println(nuevoComic);
                             System.out.println(" ");
                             break;
 
@@ -260,6 +266,7 @@ public class Main {
                             if (codigo_comic != 0) {
                                 System.out.println(" ¿Seguro desea eliminar este registro?: 1-SI 2-NO");
                                 Scanner confirmarC = new Scanner(System.in);
+                                System.out.print("Respuesta: ");
                                 int borrarSiComic = confirmarC.nextInt();
                                 if (borrarSiComic == 1) {
                                     BorrarElemento borrarComic = new BorrarElemento();
