@@ -108,13 +108,17 @@ Permite eliminar productos en base al ID de producto (Libros, comics, revistas):
     
    **-** Si se encuentra el codigo, se mostrarán los datos y se pedirá una confirmación de que se desea eliminar:
    
-   **1 - SI :** Se elimina el registro, sale un mensaje de producto eliminado correctamente.
+   **1 - SI :** 
+   
+   Se elimina el registro, sale un mensaje de producto eliminado correctamente.
  
-   **2 - No :** Vuelve al menú anterior.
+   **2 - No :** 
+   
+   Vuelve al menú anterior.
 
    **-** Si no se encuentra el código, saldrá un mensaje notificando de que ese código no pertenece a un producto existente.
      
-### 4 - Salir del programa
+### 5 - Salir del programa
 
  Cuando se elija esta opción se preguntará si de verdad desea salir:
  
