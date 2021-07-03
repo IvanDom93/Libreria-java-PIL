@@ -49,11 +49,11 @@ Permite buscar determinados productos basados en diferentes criterios:
    
   **2 - Búsqueda por géneros**
   
-   Se escribe un genéro de libro (Terror, Fantasía) y se muestran todos los productos que cumplen con esa clasificación.
+   Se escribe un genéro de libro o cómic (Terror, Fantasía, etc) y se muestran todos los productos que cumplen con esa clasificación.
                     
- **3 - Búsqueda del precio del libro**
+ **3 - Búsqueda del precio del producto**
   
-   Se escribe el nombre del libro o comic para consultar el precio guardado a ese producto
+   Se escribe el titulo del producto para consultar su precio almacenado.
    
   **4 - Búsqueda por titulo**
   
@@ -61,7 +61,7 @@ Permite buscar determinados productos basados en diferentes criterios:
    
   **5 - Volver atrás**
   
-   Vuelve al menú principal
+   Vuelve al menú principal.
 
 ### 3 - Insertar nuevos elementos
 
@@ -71,23 +71,23 @@ Permite buscar ingresar nuevos productos (Libros, comics, revistas):
     
    Cuando se quiera ingresar un nuevo libro al sistema se pedirán los siguentes datos por consola: Titulo, Autor, Precio, Genero, Editorial, Año de publicación. 
     
-   Una vez completados los datos el producto se habrá agregado.
+   Una vez completados los datos el producto se habrá agregado, se mostrará en un mensaje si el libro se agregó correctamente y los datos ingresados.
      
    **2 - Ingresa una nueva revista**
    
    Cuando se quiera ingresar una nueva Revista al sistema se pedirán los siguentes datos por consola: Nombre de la revista, Precio, Fecha de publicación.
       
-   Una vez completados los datos el producto se habrá agregado.
+   Una vez completados los datos el producto se habrá agregado, se mostrará en un mensaje si la revista se agregó correctamente y los datos ingresados.
      
    **3 - Ingresa un nuevo cómic**
    
    Cuando se quiera ingresar un nuevo Comic al sistema se pedirán los siguentes datos por consola: Titulo, Autor, Precio, Genero, Editorial, Año de publicación, Dibujante, Colorista. 
      
-   Una vez completados los datos el producto se habrá agregado.
+   Una vez completados los datos el producto se habrá agregado, se mostrará en un mensaje si el cómic se agregó correctamente y los datos ingresados.
      
    **4 - Volver atrás**
    
-   Vuelve al menú principal
+   Vuelve al menú principal.
    
  ### 4 - Eliminar productos
 
@@ -104,7 +104,7 @@ Permite eliminar productos en base al ID de producto (Libros, comics, revistas):
      
    **4 - Volver atrás**
    
-  Cuando se quiera Eliminar un producto se pedirá el codigo del producto: 
+  Cuando se quiera Eliminar un producto se pedirá el código del producto: 
     
    **-** Si se encuentra el codigo, se pedirá una confirmación de que se desea eliminar:
    
@@ -116,7 +116,7 @@ Permite eliminar productos en base al ID de producto (Libros, comics, revistas):
      
 ### 4 - Salir del programa
 
- Cuando se elija esta opción se preguntará si de verdad desea salir
+ Cuando se elija esta opción se preguntará si de verdad desea salir:
  
  **1 - SI** 
  
