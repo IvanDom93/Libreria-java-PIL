@@ -12,8 +12,7 @@ public class Revista extends Producto {
 
     @Override
     public String toString() {
-        return "Listado de Revistas: " +
-                "Nombre de revista: '" + titulo + '\'' +
+        return    "Nombre de revista: '" + titulo + '\'' +
                 ", precio: " + precio +
                 ", Fecha de publicación: '" + fechaPublicacion + '\'';
     }

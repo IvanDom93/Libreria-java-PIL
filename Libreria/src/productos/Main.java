@@ -53,7 +53,7 @@ public class Main {
                 case 2:
                     System.out.println("1 - Búsqueda por autores");
                     System.out.println("2 - Búsqueda por géneros");
-                    System.out.println("3 - Búsqueda del precio del libro");
+                    System.out.println("3 - Búsqueda de precio de producto");
                     System.out.println("4 - Búsqueda por titulo");
                     System.out.println("5 - Volver atrás");
                     Scanner scannerBusqeda = new Scanner(System.in);
@@ -80,7 +80,7 @@ public class Main {
                             break;
                         case 3:
                             Scanner scannerPrecio = new Scanner(System.in);
-                            System.out.print("Escribe el libro del que deseas saber el precio: ");
+                            System.out.print("Escribe el producto del que deseas saber el precio: ");
                             String tituloLibro = scannerPrecio.nextLine().toUpperCase();
 
                             LeerElemento buscarPrecio = new LeerElemento();
@@ -89,7 +89,7 @@ public class Main {
                             break;
                         case 4:
                             Scanner scannerTitulo = new Scanner(System.in);
-                            System.out.print("Escribe el título del libro que desea buscar : ");
+                            System.out.print("Escribe el título del producto que desea buscar : ");
                             String titulos = scannerTitulo.nextLine().toUpperCase();
 
                             LeerElemento busquedaTitulos = new LeerElemento();
@@ -132,6 +132,8 @@ public class Main {
 
                             insertarLibro.insertarNuevoLibro(nuevoTitulo, nuevoAutor, nuevoPrecio, nuevoGenero, nuevoEditorial, nuevoAnio);
 
+                            Libro nuevoLibro = new Libro(nuevoTitulo,nuevoAutor,nuevoPrecio,nuevoGenero,nuevoEditorial,nuevoAnio);
+                            System.out.println(nuevoLibro);
                             System.out.println(" ");
                             break;
                         case 2:
@@ -149,6 +151,8 @@ public class Main {
 
                             insertarRevista.insertarNuevaRevista(nuevoNombre, nuevoPrecioR, nuevaFecha);
 
+                            Revista nuevaRevista = new Revista(nuevoNombre,nuevoPrecioR,nuevaFecha);
+                            System.out.println(nuevaRevista);
                             System.out.println(" ");
                             break;
                         case 3:
@@ -176,6 +180,8 @@ public class Main {
 
                             insertarComic.insertarNuevoComic(nuevoTituloC, nuevoAutorC, nuevoPrecioC, nuevoGeneroC, nuevoEditorialC, nuevoAnioC, nuevoDibujante, nuevoColorista);
 
+                            Comic nuevoComic = new Comic(nuevoTituloC, nuevoAutorC, nuevoPrecioC, nuevoGeneroC, nuevoEditorialC, nuevoAnioC, nuevoDibujante, nuevoColorista);
+                            System.out.println(nuevoComic);
                             System.out.println(" ");
                             break;
 
@@ -260,6 +266,7 @@ public class Main {
                             if (codigo_comic != 0) {
                                 System.out.println(" ¿Seguro desea eliminar este registro?: 1-SI 2-NO");
                                 Scanner confirmarC = new Scanner(System.in);
+                                System.out.print("Respuesta: ");
                                 int borrarSiComic = confirmarC.nextInt();
                                 if (borrarSiComic == 1) {
                                     BorrarElemento borrarComic = new BorrarElemento();

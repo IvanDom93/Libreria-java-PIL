@@ -20,10 +20,11 @@ public class Comic extends Libro {
     }
 
 
+
+
     @Override
     public String toString() {
-        return "Listado de Comics: " +
-                "Nombre de comic: '" + titulo + '\'' +
+        return    "Nombre de comic: '" + titulo + '\'' +
                 ", Escritor: '" + autorNombre + '\'' +
                 ", Precio: " + precio +
                 ", Genero: '" + genero + '\'' +

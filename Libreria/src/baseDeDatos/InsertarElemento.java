@@ -166,7 +166,7 @@ public class InsertarElemento {
             stmt = conn.createStatement();
             String sql = "INSERT INTO LIBRO " + "VALUES" + "(" + busquedaDeId(1) + ",'" + nuevoTitulo + "','" + nuevoAutor + "'," + nuevoPrecio + ",'" + nuevoGenero + "','" + nuevoEditorial + "'," + nuevoAnio + ");";
             stmt.executeUpdate(sql);
-            System.out.println("El producto se agregó correctamente");
+            System.out.println("El producto se agregó correctamente: ");
             stmt.close();
             conn.close();
         } catch (SQLException se) {
@@ -195,7 +195,7 @@ public class InsertarElemento {
             stmt = conn.createStatement();
             String sql = "INSERT INTO COMIC " + "VALUES" + "(" + busquedaDeId(2) + ",'" + nuevoTitulo + "','" + nuevoAutor + "'," + nuevoPrecio + ",'" + nuevoGenero + "','" + nuevoEditorial + "'," + nuevoAnio + ",'" + nuevoDibujante + "','" + nuevoColorista + "');";
             stmt.executeUpdate(sql);
-            System.out.println("El producto se agregó correctamente");
+            System.out.println("El producto se agregó correctamente: ");
             stmt.close();
             conn.close();
         } catch (SQLException se) {
@@ -224,7 +224,7 @@ public class InsertarElemento {
             stmt = conn.createStatement();
             String sql = "INSERT INTO Revista " + "VALUES" + "(" + busquedaDeId(3) + ",'" + nuevoNombre+"'," + nuevoPrecioR + ",'" + nuevaFecha + "');";
             stmt.executeUpdate(sql);
-            System.out.println("El producto se agregó correctamente");
+            System.out.println("El producto se agregó correctamente: ");
             stmt.close();
             conn.close();
         } catch (SQLException se) {
